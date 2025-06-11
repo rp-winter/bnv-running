@@ -2,41 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def plot_wilson_coefficients(list_of_energy_solutions, list_of_wc, labels=None, title=None, save_path=None):
-    colors = ["blue", "green", "red", "orange", "black", "gray"]
-    line_styles = ["solid", "solid", "solid", "solid"]
-    fig, axs = plt.subplots(3, 3, figsize=(12, 10))
-    axs = axs.flatten()
-
-    # Iterate over all datasets
-    for idx, (energy_solutions, wilson_coefficients) in enumerate(zip(list_of_energy_solutions, list_of_wc)):
-
-        for i in range(9):
-            flag = True
-            for e, wc in zip(energy_solutions, wilson_coefficients):
-                if flag:
-                    label = labels[idx] if labels else None
-                    flag = False
-                else:
-                    label = None
-                axs[i].plot(e, wc[i], label=label, color=colors[idx], linestyle=line_styles[idx % len(line_styles)])
-
-    for i in range(9):
-        axs[i].set_xlabel("E (TeV)")
-        axs[i].set_ylabel(f"$C^{(i+1)}$")
-        axs[i].grid(True)
-        #axs[i].set_yscale('log')
-        if labels:
-            axs[i].legend()
-
-    if title:
-        plt.suptitle(title)
-
-    plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path)
-    plt.show()
-
 def plot_Lambda_bar_graph(Lambda, title=None, save_path=None):
     categories = [f"$C^{{({i+1})}}$" for i in range(9)]
 
