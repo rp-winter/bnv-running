@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def plot_wilson_coefficients(list_of_energy_solutions, list_of_wc, labels=None, title=None, save_path=None):
     colors = ["blue", "green", "red", "orange", "black", "gray"]
@@ -67,4 +68,30 @@ def plot_Lambda_bar_graph(Lambda, title=None, save_path=None):
     if save_path:
         plt.savefig(save_path)
 
+    plt.show()
+
+def plot_correlation_matrix(rho_matrix, title = None, save_path=None):
+    mask = np.abs(rho_matrix) == 0.0
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.heatmap(
+        rho_matrix,
+        cmap='coolwarm',
+        mask=mask,
+        xticklabels=[f'$C^{{({i+1})}}$' for i in range(9)],
+        yticklabels=[f'$C^{{({i+1})}}$' for i in range(9)],
+        annot=True,
+        #fmt=".3f",   
+        linewidths=0.5,  # Thickness of the lines
+        linecolor='black',
+        ax = ax
+    )
+
+    n = rho_matrix.shape[0]
+    ax.add_patch(plt.Rectangle((0, 0), n, n, fill=False, edgecolor='black', lw=0.5, clip_on=False))
+
+    plt.tight_layout()
+    if title:
+        plt.title(title)
+    if save_path:
+        plt.savefig(save_path)
     plt.show()
