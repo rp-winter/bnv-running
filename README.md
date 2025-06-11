@@ -6,14 +6,16 @@ This project numerically solves the coupled differential equations for Wilson co
 
 ## 📁 Project Structure
 ```
+bnv-running/
 ├── bnv_running/ 
-│   ├── bnv_running.py
-│   ├── differential_equations.py 
-├── n-n_bar-oscillation
-│   ├── results/
-│   ├── plot.py
-│   ├── wc_evol_and_lambda.ipynb
-└── requirements.txt # Python dependencies
+│   ├── bnv_running.py                # Main driver for RGE evolution
+│   ├── differential_equations.py     # Defines the system of differential equations
+├── n-n_bar-oscillation/
+│   ├── results/                      # Output plots and data
+│   ├── plot.py                       # Visualization tools
+│   ├── wc_evol_and_lambda.ipynb      # Jupyter notebook with example use case
+├── requirements.txt                  # Python dependencies
+
 ```
 ---
 
@@ -44,7 +46,7 @@ pip install -r requirements.txt
 
 ## 🚀 How to Use
 
-A full explanation of all modules, functions, and physics context is available in the [Wiki](https://github.com/rp-winter/bnv-running/wiki)
+A full explanation of all modules and functions is available in the [Wiki](https://github.com/rp-winter/bnv-running/wiki)
 
 
-Refer to ```n-n_bar-oscillation/wc_evol_and_lambda.ipynb``` for a working example.
+Refer to ```n-n_bar-oscillation/wc_evol_and_lambda.ipynb``` for a working example relavant to the BNV running for neutron-antineutron oscillations.
