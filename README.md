@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## 🚀 How to Use
 
-A full explanation of all modules and functions is available in the [Wiki](https://github.com/rp-winter/bnv-running/wiki)
+A full explanation of all modules and functions is available in the [Wiki](https://github.com/rp-winter/bnv-running/wiki).
 
 
 Refer to ```n-n_bar-oscillation/wc_evol_and_lambda.ipynb``` for a working example relavant to the BNV running for neutron-antineutron oscillations.
